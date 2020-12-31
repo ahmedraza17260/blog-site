@@ -10,6 +10,7 @@ import Img from "gatsby-image"
 class BlogPostContentfulTemplate extends React.Component {
   render() {
     const post = this.props.data.contentfulPost
+    const post1 = this.props.data.contentfulPostDesc
     const siteTitle = this.props.data.site.siteMetadata.title
     // const { previous, next } = this.props.pageContext
 
@@ -26,7 +27,9 @@ class BlogPostContentfulTemplate extends React.Component {
           <h1 style={{ textAlign: "center" }}>{post.title}</h1>
         </header>
         <section
-          dangerouslySetInnerHTML={{ __html: post.description.raw }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(JSON.stringify(post1.description)),
+          }}
           itemProp="articleBody"
         />
         <hr />
@@ -87,5 +90,11 @@ export const pageQuery = graphql`
         }
       }
     }
+    contentfulPostDesc(slug: { eq: $slug }) {
+      description {
+        raw
+      }
+    }
   }
 `
+export const allPageQuery = JSON.stringify(pageQuery)

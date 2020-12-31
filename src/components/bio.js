@@ -33,11 +33,13 @@ const Bio = () => {
     }
   `)
 
+  // const data1 = JSON.stringify(data)
+
   // Set these values by editing "siteMetadata" in gatsby-config.js
   const author = data.site.siteMetadata?.author
   const social = data.site.siteMetadata?.social
 
-  // const avatar = data?.avatar?.childImageSharp?.fixed
+  // const avatar = data1?.avatar?.childImageSharp?.fixed
 
   return (
     <div className="bio">

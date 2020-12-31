@@ -144,3 +144,4 @@ export const pageQuery = graphql`
     }
   }
 `
+export const allPageQuery = JSON.stringify(pageQuery)

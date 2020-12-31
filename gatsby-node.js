@@ -24,6 +24,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
     const posts = result.data.allContentfulPost.nodes
 
+    // const posts1 = JSON.stringify(posts)
+
     posts.forEach((post, index) => {
       // const previous = index === post.length - 1 ? null : posts[index + 1]
       // const next = index === 0 ? null : posts[index - 1].node
